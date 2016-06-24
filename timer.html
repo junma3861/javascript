@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<HTML>
+	<HEAD>
+		<TITLE>Timer</TITLE>
+		<SCRIPT LANGUAGE = "Javascript">
+
+		var flip = false;
+
+		function timer() {
+			animation = setInterval("pics()", 1000);
+		}
+
+		function pics() {
+			if (flip == false) {
+				document.getElementById("img1").src = "home2.jpg";
+			}
+			else {
+				document.getElementById("img1").src = "home1.jog"
+			}
+			flip = !flip
+		}
+
+		function stopTimer() {
+			clearInterval(animation);
+		}
+
+		</SCRIPT>
+	</HEAD>
+	
+	<BODY>
+
+		<p><img src="home.jpg" id="img1"></p>
+
+		<p><input type="button" value="start" onclick="timer()"></input></p>
+		<p><input type="button" value="stop" onclick="stopTimer()"></input></p>
+		
+
+	</BODY>
+</HTML>
+

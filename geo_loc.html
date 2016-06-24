@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<HTML>
+	<HEAD>
+		<TITLE>Geolocation</TITLE>
+	</HEAD>
+	
+	<BODY>
+
+		<p id="error_code">INFO</p>
+		<div id="map"></div>
+
+		<SCRIPT LANGUAGE = "Javascript">
+			var getLabel1 = document.getElementById("error_code");
+
+			if (navigator.geolocation) {
+				navigator.geolocation.getCurrentPosition(getLongLat, errorMessage);
+			}
+			else {
+				getLabel1.innerHTML = 'NO HEOLOCATION SUPPORT';
+			}
+
+			function getLongLat(position) {
+				getLabel1.innerHTML = position.coords.latitude + "<br>";
+				getLabel1.innerHTML = getLabel1.innerHTML + position.coords.longitude + "<br>";
+			}
+
+			function errorMessage(error) {
+
+				switch(error.code) {
+					case error.TIMEOUT:
+						getLabel1.innerHTML = 'Timeout';
+						break;
+					case error.POSITION_UNAVAILABLE:
+						getLabel1.innerHTML = 'Position unavailable';
+						break;
+					case error.PERMISSION_DENIED:
+						getLabel1.innerHTML = 'Permission denied';
+						break;
+					case error.UNKNOWN_ERROR:
+						getLabel1.innerHTML = "Unknown error";
+						break;
+				}
+			}
+
+		</SCRIPT>
+
+	</BODY>
+</HTML>
+
