@@ -16,12 +16,18 @@
 				navigator.geolocation.getCurrentPosition(getLongLat, errorMessage);
 			}
 			else {
-				getLabel1.innerHTML = 'NO HEOLOCATION SUPPORT';
+				getLabel1.innerHTML = 'NO GEOLOCATION SUPPORT';
 			}
 
 			function getLongLat(position) {
 				getLabel1.innerHTML = position.coords.latitude + "<br>";
 				getLabel1.innerHTML = getLabel1.innerHTML + position.coords.longitude + "<br>";
+
+				var pos = position.coords.latitude + "," + position.coords.longitude;
+				var display = "http://maps.googleapis.com/maps/api/staticmap?center=" + pos + "&zoom=15&size=500x500&markers=" + pos + "&sensor=false";
+				var img_display = "<IMG SRC=" + display + ">";
+				document.getElementById("map").innerHTML=img_display;
+
 			}
 
 			function errorMessage(error) {
