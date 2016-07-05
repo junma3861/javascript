@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<HTML>
+	<HEAD>
+		<TITLE>The Canvas Tag</TITLE>
+
+	<SCRIPT>
+
+		function drawOnCanvas() {
+
+			var canvas = document.getElementById("canvas_1");
+
+			if (canvas.getContext){
+				var canvas_context = canvas.getContext("2d");
+
+				/*
+				canvas_context.strokeRect(20, 30, 100, 50);
+				canvas_context.fillRect(20, 100, 100, 50);
+				canvas_context.clearRect(35, 110, 50, 30);
+
+				canvas_context.fillStyle = "rgb(255, 0, 0)";
+				canvas_context.fillStyle = "rgba(255, 0, 0, 0.5)";
+
+				canvas_context.fillStyle = "rgba(255, 0, 0, 0.5 )";
+				canvas_context.fillRect( 20, 170, 100, 50 );
+				*/
+
+				// var start_degrees = 0;
+				// var start_angle = (Math.PI/180) * start_degrees;
+
+				// var end_degrees = 360;
+				// var end_angle = (Math.PI/180) * end_degrees;
+
+				// canvas_context.beginPath();
+				// canvas_context.arc(75, 75, 50, start_angle, end_angle, true);
+
+				// canvas_context.strokeStyle = "rgb(0, 222, 0)";
+				// canvas_context.stroke();
+
+				// canvas_context.beginPath();
+				// canvas_context.moveTo(75, 100);
+
+				// canvas_context.lineTo(150, 200);
+				// canvas_context.lineTo(150, 25);
+
+				// canvas_context.closePath();
+				// canvas_context.stroke()
+				// canvas_context.fillStyle = "rgb(255, 0, 0)";
+				// canvas_context.fill();
+
+				// canvas_context.beginPath()
+				// canvas_context.lineWidth = 20;
+				// canvas_context.lineCap = "round";
+				// canvas_context.moveTo(50, 100);
+				// canvas_context.lineTo(250, 100);
+				// canvas_context.stroke();
+
+				// var lin_grad = canvas_context.createLinearGradient(0, 0, 0, 400);
+				// lin_grad.addColorStop(0, "#FC00F9");
+				// lin_grad.addColorStop(0.5, "#FB8AFA");
+				// lin_grad.addColorStop(1, "#FAE3FA");
+				// canvas_context.fillStyle = lin_grad;
+				// canvas_context.fillRect(0, 0, 400, 400);
+
+				// var end_degrees = 360;
+				// var end_angle = (Math.PI/180) * end_degrees;
+				// var start_degrees = 0;
+				// var start_angle = (Math.PI/180) * start_degrees;
+				// canvas_context.beginPath();
+				// canvas_context.arc(75, 75, 50, start_angle, end_angle, false);
+				// var rad_grad = canvas_context.createRadialGradient(75, 75, 50, 60, 75, 30);
+				// rad_grad.addColorStop(0, "rgb(253, 249, 253)");
+				// rad_grad.addColorStop(1, "rgb(241, 45, 239)");
+				// canvas_context.fillStyle = rad_grad;
+				// canvas_context.fill();
+
+				var home = new Image();
+				home.src = "home.jpg";
+				home.onload = function() {
+					var pattern = canvas_context.createPattern(home, "repeat");
+					canvas_context.fillStyle = pattern;
+					canvas_context.fillRect(0, 0, 500, 400);
+				}
+
+
+
+			}
+
+		}
+
+
+	</SCRIPT>
+
+	</HEAD>
+
+	<BODY>
+
+	<SECTION style="border-style: solid; border-width: 2px; width: 500px;">
+
+		<CANVAS WIDTH="400" HEIGHT="400" ID="canvas_1">
+			Canvas tag not supported
+		</CANVAS>
+
+	</SECTION>
+
+	<P>
+		<INPUT TYPE ="Button" VALUE="  Draw  " onClick="drawOnCanvas()">
+	</P>
+
+	</BODY>
+</HTML>
+

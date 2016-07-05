@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<HTML>
+	<HEAD>
+		<TITLE>The Canvas Tag</TITLE>
+
+	<SCRIPT>
+
+		function initialise() {
+			var canvas = document.getElementById("canvas_1");
+			canvas.addEventListener("mousedown", doMouseDown, false);
+		}
+
+		function doMouseDown(event) {
+			canvas_x = event.pageX;
+			canvas_y = event.pageY;
+			alert("X=" + canvas_x + " Y=" + canvas_y);
+		}
+
+
+	</SCRIPT>
+
+	</HEAD>
+
+	<BODY onLoad=initialise()>
+
+		<CANVAS WIDTH="400" HEIGHT="400" ID="canvas_1">
+			Canvas tag not supported
+		</CANVAS>
+
+
+	</BODY>
+</HTML>
+
